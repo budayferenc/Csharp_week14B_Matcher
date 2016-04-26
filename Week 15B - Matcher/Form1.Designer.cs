@@ -28,37 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.searchButton = new System.Windows.Forms.Button();
+            this.inputTextBox = new System.Windows.Forms.TextBox();
+            this.patternTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.matchesListBox = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
-            // button1
+            // searchButton
             // 
-            this.button1.Location = new System.Drawing.Point(451, 160);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Search";
-            this.button1.UseVisualStyleBackColor = true;
+            this.searchButton.Location = new System.Drawing.Point(451, 160);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(75, 23);
+            this.searchButton.TabIndex = 0;
+            this.searchButton.Text = "Search";
+            this.searchButton.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // inputTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(42, 12);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(484, 99);
-            this.textBox1.TabIndex = 1;
+            this.inputTextBox.Location = new System.Drawing.Point(42, 12);
+            this.inputTextBox.Multiline = true;
+            this.inputTextBox.Name = "inputTextBox";
+            this.inputTextBox.Size = new System.Drawing.Size(484, 99);
+            this.inputTextBox.TabIndex = 1;
             // 
-            // textBox2
+            // patternTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(86, 126);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(440, 20);
-            this.textBox2.TabIndex = 2;
+            this.patternTextBox.Location = new System.Drawing.Point(86, 126);
+            this.patternTextBox.Name = "patternTextBox";
+            this.patternTextBox.Size = new System.Drawing.Size(440, 20);
+            this.patternTextBox.TabIndex = 2;
             // 
             // label1
             // 
@@ -78,27 +78,29 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Pattern";
             // 
-            // listBox1
+            // matchesListBox
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(42, 199);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(484, 95);
-            this.listBox1.TabIndex = 4;
+            this.matchesListBox.FormattingEnabled = true;
+            this.matchesListBox.Location = new System.Drawing.Point(42, 199);
+            this.matchesListBox.Name = "matchesListBox";
+            this.matchesListBox.Size = new System.Drawing.Size(484, 95);
+            this.matchesListBox.TabIndex = 4;
+            this.matchesListBox.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(539, 311);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.matchesListBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.patternTextBox);
+            this.Controls.Add(this.inputTextBox);
+            this.Controls.Add(this.searchButton);
             this.Name = "Form1";
             this.Text = "Matcher";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -106,12 +108,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button searchButton;
+        private System.Windows.Forms.TextBox inputTextBox;
+        private System.Windows.Forms.TextBox patternTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox matchesListBox;
     }
 }
 
